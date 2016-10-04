@@ -27,10 +27,10 @@ export class TimerComponent implements OnInit {
     sub: Subscription;
 
     ngOnInit() {
-        this.playExercise();
+        this.startTimer();
     }
 
-    private playExercise() {
+    private startTimer() {
 
         let timer = Observable.timer(1, 1000);
         this.sub = timer.subscribe(
@@ -44,7 +44,7 @@ export class TimerComponent implements OnInit {
         );
     }
 
-   private getSeconds(ticks: number) {
+    private getSeconds(ticks: number) {
         return this.pad(ticks % 60);
     }
 
@@ -56,6 +56,7 @@ export class TimerComponent implements OnInit {
         return this.pad(Math.floor((ticks / 60) / 60));
     }
 
-    private pad = (n: any) => n <= 9 ? '0' + n : n;
-
+    private pad(digit: any) { 
+        return digit <= 9 ? '0' + digit : digit;
+    }
 }
