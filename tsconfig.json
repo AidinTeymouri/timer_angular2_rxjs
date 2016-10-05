@@ -3,12 +3,12 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "module": "commonjs",
-        "moduleResolution": "node",
         "noImplicitAny": true,
         "removeComments": false,
         "sourceMap": true,
         "suppressImplicitAnyIndexErrors": true,
-        "target": "es5"
+        "target": "es5",
+        "types": ["node", "core-js"]
     },
     "exclude": [
         "node_modules",
